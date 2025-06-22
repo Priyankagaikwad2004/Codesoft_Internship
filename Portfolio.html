@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -368,7 +369,7 @@
             left: 0;
             right: 0;
             padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            background: rgba(0, 0, 0, 0.45); /* semi-transparent dark layer */
         }
         
         .project-info h3 {
@@ -715,47 +716,60 @@
                 <p>MySQL</p>
             </div>
             <div class="skill-item glass-card fade-in" style="animation-delay: 0.6s;">
-                <i class="fab fa-react"></i>
-                <p>React</p>
+                <i class="fas fa-code"></i>
+                <p>DSA</p>
             </div>
             <div class="skill-item glass-card fade-in" style="animation-delay: 0.7s;">
-                <i class="fas fa-code"></i>
-                <p>Problem Solving</p>
+                <i class="fab fa-github"></i>
+                <p>Github</p>
             </div>
         </div>
     </section>
     
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title fade-in">My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card glass-card fade-in">
-                <img src="farmers_website.png" alt="Farmer's Website">
-                <div class="project-info">
-                    <h3>Farmer's Website</h3>
-                    <p>Feature-rich platform with user authentication and product management</p>
-                    <a href="#" class="btn btn-outline">View Project</a>
-                </div>
-            </div>
-            <div class="project-card glass-card fade-in" style="animation-delay: 0.2s;">
-                <img src="bonafide_system.png" alt="Bonafide Certificate System">
-                <div class="project-info">
-                    <h3>Bonafide Certificate System</h3>
-                    <p>Automated certificate generation with multi-role login</p>
-                    <a href="#" class="btn btn-outline">View Project</a>
-                </div>
-            </div>
-            <div class="project-card glass-card fade-in" style="animation-delay: 0.4s;">
-                <img src="quiz-app.jpg" alt="Quiz Application">
-                <div class="project-info">
-                    <h3>Quiz Application</h3>
-                    <p>Scalable quiz app with score tracking and multiple-choice options</p>
-                    <a href="#" class="btn btn-outline">View Project</a>
-                </div>
+   <!-- Projects Section -->
+<section id="projects">
+    <h2 class="section-title fade-in">My Projects</h2>
+    <div class="projects-grid">
+
+        <!-- Farmer’s Market Web App -->
+        <div class="project-card glass-card fade-in">
+            <img src="farmers_website.png" alt="Farmer's Website">
+            <div class="project-info">
+                <h3>Farmer’s Market Web App</h3>
+                <p>
+                    A dynamic PHP-based platform where farmers can register, upload produce, and manage listings. Buyers can browse categories and place order requests. Features secure login, responsive design, and product filtering.
+                </p>
+                <a href="#" class="btn btn-outline">View Project</a>
             </div>
         </div>
-    </section>
-    
+
+        <!-- Bonafide & Leaving Certificate System -->
+        <div class="project-card glass-card fade-in" style="animation-delay: 0.2s;">
+            <img src="bonafide_system.png" alt="Bonafide Certificate System">
+            <div class="project-info">
+                <h3>Bonafide & Leaving Certificate System</h3>
+                <p>
+                    A PHP and MySQL-based application for automating the generation of bonafide and leaving certificates. Includes multi-role login (Student, HOD, Library, Accounts) and an integrated clearance process.
+                </p>
+                <a href="#" class="btn btn-outline">View Project</a>
+            </div>
+        </div>
+
+        <!-- Patient Management System -->
+        <div class="project-card glass-card fade-in" style="animation-delay: 0.4s;">
+            <img src="patient_m.png" alt="Patient Management System">
+            <div class="project-info">
+                <h3>Patient Management System</h3>
+                <p>
+                    A lightweight hospital management mini project using PHP and MySQL to manage patient records, doctor assignments, and visit logs. Features secure admin access and a mobile-responsive layout.
+                </p>
+                <a href="#" class="btn btn-outline">View Project</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+ 
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title fade-in">Get In Touch</h2>
