@@ -342,7 +342,7 @@
         /* Projects Section */
         #projects .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
@@ -350,6 +350,9 @@
             position: relative;
             overflow: hidden;
             border-radius: 15px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card img {
@@ -357,6 +360,7 @@
             height: 200px;
             object-fit: cover;
             transition: transform 0.5s ease;
+            flex-shrink: 0;
         }
         
         .project-card:hover img {
@@ -364,12 +368,11 @@
         }
         
         .project-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.45); /* semi-transparent dark layer */
+            background: rgba(0, 0, 0, 0.45);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-info h3 {
@@ -382,6 +385,12 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .project-info .btn {
+            align-self: flex-start;
+            margin-top: auto;
         }
         
         /* Contact Section */
@@ -603,6 +612,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            /* Adjust project cards for tablet */
+            #projects .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
         
         @media (max-width: 576px) {
@@ -619,6 +633,7 @@
                 text-align: center;
             }
             
+            /* Stack project cards on mobile */
             #projects .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -630,6 +645,27 @@
             
             .name-logo {
                 font-size: 1.2rem;
+            }
+            
+            /* Adjust project card layout for mobile */
+            .project-card {
+                flex-direction: column;
+            }
+            
+            .project-card img {
+                height: 180px;
+            }
+            
+            .project-info {
+                padding: 1rem;
+            }
+            
+            .project-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .project-info p {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -664,7 +700,7 @@
     <section id="home">
         <div class="hero-content glass-card fade-in">
             <h1>Priyanka Gaikwad</h1>
-            <p>Passionate web developer creating innovative digital experiences with cutting-edge technologies and creative solutions.</p>
+            <p>Passionate Web Developer | Problem Solver | Final-Year Engineering Student</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
@@ -680,8 +716,8 @@
                 <img src="img3.jpg" alt="Priyanka Gaikwad">
             </div>
             <div class="about-content fade-in" style="animation-delay: 0.2s;">
-                <p>I am a Computer Engineering student at Keystone School of Engineering, Pune, with an expected graduation in 2026. I specialize in building modern web applications with responsive designs and intuitive user interfaces.</p>
-                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects.</p>
+                <p>I’m Priyanka Gaikwad, a final-year engineering student with a deep interest in web development and software engineering. I enjoy creating clean, responsive websites and building projects that solve real-world problems. My focus has been on improving my full-stack development skills and sharpening my problem-solving through DSA.</p>
+                <p>Some of my recent projects include a Bonafide & Leaving Certificate Automation System, a Patient Management System, and a Farmer’s Marketplace Website. I’m always eager to learn, collaborate, and grow as a developer. I’m currently looking for opportunities to apply my skills in a real-world tech environment.</p>
                 <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Let's Connect</a>
             </div>
         </div>
@@ -726,50 +762,42 @@
         </div>
     </section>
     
-   <!-- Projects Section -->
-<section id="projects">
-    <h2 class="section-title fade-in">My Projects</h2>
-    <div class="projects-grid">
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title fade-in">My Projects</h2>
+        <div class="projects-grid">
+            <!-- Farmer's Market Web App -->
+            <div class="project-card glass-card fade-in">
+                <img src="farmers_website.png" alt="Farmer's Website">
+                <div class="project-info">
+                    <h3>Farmer's Market Web App</h3>
+                    <p>A dynamic PHP-based platform where farmers can register, upload produce, and manage listings. Buyers can browse categories and place order requests. Features secure login, responsive design, and product filtering.</p>
+                    <a href="#" class="btn btn-outline">View Project</a>
+                </div>
+            </div>
 
-        <!-- Farmer’s Market Web App -->
-        <div class="project-card glass-card fade-in">
-            <img src="farmers_website.png" alt="Farmer's Website">
-            <div class="project-info">
-                <h4>Farmer’s Market Web App</h4>
-                <p>
-                    A dynamic PHP-based platform where farmers can register, upload produce, and manage listings. Buyers can browse categories and place order requests. Features secure login, responsive design, and product filtering.
-                </p>
-                <a href="#" class="btn btn-outline">View Project</a>
+            <!-- Bonafide & Leaving Certificate System -->
+            <div class="project-card glass-card fade-in" style="animation-delay: 0.2s;">
+                <img src="bonafide_system.png" alt="Bonafide Certificate System">
+                <div class="project-info">
+                    <h3>Bonafide & Leaving Certificate System</h3>
+                    <p>A PHP and MySQL-based application for automating the generation of bonafide and leaving certificates. Includes multi-role login (Student, HOD, Library, Accounts) and an integrated clearance process.</p>
+                    <a href="#" class="btn btn-outline">View Project</a>
+                </div>
+            </div>
+
+            <!-- Patient Management System -->
+            <div class="project-card glass-card fade-in" style="animation-delay: 0.4s;">
+                <img src="patient_m.png" alt="Patient Management System">
+                <div class="project-info">
+                    <h3>Patient Management System</h3>
+                    <p>A lightweight hospital management mini project using PHP and MySQL to manage patient records, doctor assignments, and visit logs. Features secure admin access and a mobile-responsive layout.</p>
+                    <a href="#" class="btn btn-outline">View Project</a>
+                </div>
             </div>
         </div>
-
-        <!-- Bonafide & Leaving Certificate System -->
-        <div class="project-card glass-card fade-in" style="animation-delay: 0.2s;">
-            <img src="bonafide_system.png" alt="Bonafide Certificate System">
-            <div class="project-info">
-                <h4>Bonafide & Leaving Certificate System</h4>
-                <p>
-                    A PHP and MySQL-based application for automating the generation of bonafide and leaving certificates. Includes multi-role login (Student, HOD, Library, Accounts) and an integrated clearance process.
-                </p>
-                <a href="#" class="btn btn-outline">View Project</a>
-            </div>
-        </div>
-
-        <!-- Patient Management System -->
-        <div class="project-card glass-card fade-in" style="animation-delay: 0.4s;">
-            <img src="patient_m.png" alt="Patient Management System">
-            <div class="project-info">
-                <h4>Patient Management System</h4>
-                <p>
-                    A lightweight hospital management mini project using PHP and MySQL to manage patient records, doctor assignments, and visit logs. Features secure admin access and a mobile-responsive layout.
-                </p>
-                <a href="#" class="btn btn-outline">View Project</a>
-            </div>
-        </div>
-
-    </div>
-</section>
- 
+    </section>
+    
     <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title fade-in">Get In Touch</h2>
